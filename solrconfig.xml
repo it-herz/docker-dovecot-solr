@@ -696,9 +696,8 @@
       <!-- Default search field
          <str name="df">text</str> 
         -->
-      <!-- Change from JSON to XML format (the default prior to Solr 7.0)
+      Change from JSON to XML format (the default prior to Solr 7.0)
          <str name="wt">xml</str> 
-        -->
     </lst>
     <!-- In addition to defaults, "appends" params can be specified
          to identify values which should be appended to the list of
@@ -758,7 +757,7 @@
   <requestHandler name="/query" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <str name="wt">json</str>
+      <str name="wt">xml</str>
       <str name="indent">true</str>
     </lst>
   </requestHandler>
@@ -1244,7 +1243,7 @@
   <!-- The following response writers are implicitly configured unless
        overridden...
     -->
-  <!--
+  
      <queryResponseWriter name="xml"
                           default="true"
                           class="solr.XMLResponseWriter" />
@@ -1255,7 +1254,7 @@
      <queryResponseWriter name="phps" class="solr.PHPSerializedResponseWriter"/>
      <queryResponseWriter name="csv" class="solr.CSVResponseWriter"/>
      <queryResponseWriter name="schema.xml" class="solr.SchemaXmlResponseWriter"/>
-    -->
+
 
   <queryResponseWriter name="json" class="solr.JSONResponseWriter">
     <!-- For the purposes of the tutorial, JSON responses are written as
